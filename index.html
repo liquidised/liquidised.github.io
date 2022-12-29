@@ -3,56 +3,77 @@
 <head>
   <title>My Portfolio</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script>
+    // Get all the buttons with a data-scroll attribute
+    const buttons = document.querySelectorAll('[data-scroll]');
+
+    // Add a click event listener to each button
+    buttons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        // Prevent the default link behavior
+        event.preventDefault();
+
+        // Get the element to scroll to
+        const targetId = button.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        // Scroll to the element slowly
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
     <h1>My Portfolio</h1>
     <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#about" data-scroll>About</a>
+      <a href="#projects" data-scroll>Projects</a>
+      <a href="#contact" data-scroll>Contact</a>
     </nav>
   </header>
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
+      <p>I am a software developer with a passion for creating innovative and user-friendly applications. I have experience in a variety of programming languages and frameworks, including Java, Python, and React. In my free time, I enjoy learning about new technologies and staying up-to-date on industry trends. I am always looking for new challenges and opportunities to grow as a developer.</p>
     </section>
     <section id="projects">
       <h2>Projects</h2>
       <ul>
         <li>
           <h3>Project 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>I created a web application that allows users to easily track their daily water intake. The app has a simple and intuitive interface, and it provides helpful reminders and alerts to help users stay hydrated throughout the day.</p>
           <a href="#">Link to project</a>
         </li>
         <li>
           <h3>Project 2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>I developed a mobile app that helps people plan and track their fitness goals. The app includes a variety of features, such as workout plans, progress tracking, and social connectivity, to help users achieve their fitness objectives.</p>
           <a href="#">Link to project</a>
         </li>
         <li>
-          <h3>Project 3</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#">Link to project</a>
-        </li>
-      </ul>
-    </section>
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email"><br>
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
-        <input type="submit" value="Submit">
-      </form> 
-    </section>
+            <h3>Project 3</h3>
+            <p>I created a chatbot that helps users plan and manage their daily tasks. The chatbot uses natural language processing to understand user input and provide helpful suggestions and reminders to help them stay organized and on track.</p>
+            <a href="#">Link to project</a>
+    </li>
+  </ul>
+</section>
+<section id="contact">
+    <h2>Contact</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <input type="submit" value="Send">
+    </form>
+  </section>
   </main>
   <footer>
-    <p>Copyright 2021</p>
+    <p>Copyright 2021 My Portfolio</p>
   </footer>
-</body>
-</html>
+  </body>
+  </html>
